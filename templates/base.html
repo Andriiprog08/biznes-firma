@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}web{% endblock %}</title>
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="website icon" type="png" href="static/pictures/skull.png">
+    <link href="https://fonts.googleapis.com/css2?family=Nosifer&family=Creepster&family=Butcherman&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="page">
+        <header>
+             {% block menu %}{% endblock %}
+        </header>
+        <main>
+            
+        </main>
+        <footer>
+            {% block foot %}{% endblock %}
+        </footer>
+    </div>
+</body>
+</html>

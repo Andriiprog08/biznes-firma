@@ -69,11 +69,6 @@ nav .reference_men{
     color: rgb(219, 214, 214);
 }
 
-.special{
-    background-color:rgb(221, 119, 83);
-    color: black;
-}
-
 .special:hover{
     color: white;
 }
