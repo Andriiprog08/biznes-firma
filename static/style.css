@@ -36,7 +36,7 @@ nav{
 
 .name{
   font-family: 'Nosifer', cursive;
-  font-size: 38px;
+  font-size: 31px;
   color: darkred;
   text-shadow: 0 0 10px black, 2px 2px 5px #000;
   animation: pulse 1.5s infinite alternate;
@@ -44,18 +44,30 @@ nav{
 
 @keyframes pulse {
   from { text-shadow: 0 0 5px black, 2px 2px 5px #000; }
-  to { text-shadow: 0 0 20px red, 4px 4px 10px #000; }
+  to { text-shadow: 0 0 20px rgb(255, 36, 36), 4px 4px 10px #000; }
 }
 
 nav .reference_men{
     text-decoration: none;
     margin: 0px 10px;
-    padding: 8px 16px;
+    padding: 10px 19.5px;
     font-weight: bold;
+    color: rgb(193, 29, 29);
+    font-size: 17px;
+    font-family: 'Nosifer', cursive;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.8), -2px -2px 3px rgba(255,255,255,0.1);
 }
 
 .reference_men:hover {
-    color: #e3831b;
+    text-shadow: 0 0 10px black, 2px 2px 5px #000;
+    animation: pulse 2s infinite alternate;
+    text-shadow: inset 1px 1px 2px rgba(255,255,255,0.3),
+               inset -1px -1px 2px rgba(0,0,0,0.8);
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.3),
+               -1px -1px 2px rgba(0,0,0,0.7);
+    transform: translateY(1px);
 }
 .menu {
     display: flex;
@@ -64,45 +76,45 @@ nav .reference_men{
     margin-left: 15px;
 }
 
-.reference_men{
-    text-decoration: none;
-    color: rgb(219, 214, 214);
-}
-
-.special:hover{
-    color: white;
-}
-
 .dropdown{
     position: relative;
     display: inline;
 }
 
-.dropdown-content{
+.dropdown_content{
     display: none;
     position: absolute;
-    background-color: rgb(221, 119, 83);
+    background-color: rgb(184, 10, 10);
     top: 100%;
     left: 0;
+    margin-left: 30px;
     min-width: 160px;
     box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
     z-index: 1;
 }
 
-.dropdown-content .reference_shadow{
-    padding: 10px 15px;
+.dropdown_content .reference_shadow{
+    padding: 10px 25px;
     text-decoration: none;
     display: block;
     color: black;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.8), -2px -2px 3px rgba(255,255,255,0.1);
 }
 
-.dropdown-content .reference_shadow:hover{
+.dropdown_content .reference_shadow:hover{
     color: #fbfbfb;
+    text-shadow: inset 1px 1px 2px rgba(255,255,255,0.3),
+               inset -1px -1px 2px rgba(0,0,0,0.8);
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.3),
+               -1px -1px 2px rgba(0,0,0,0.7);
+    transform: translateY(1px);
 }
 
-.dropdown:hover .dropdown-content{
+.dropdown:hover .dropdown_content{
     display: block;
 }
 
@@ -116,4 +128,9 @@ nav .reference_men{
     .menu .reference_men {
         margin: 5px 0;
     }
+}
+¨
+footer{
+    background-color: rgb(16, 15, 15);
+    margin-top: 1000px;
 }
