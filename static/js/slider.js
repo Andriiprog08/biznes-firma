@@ -1,26 +1,73 @@
-let currentIndex = 0;
-const slides = document.querySelectorAll(".slide");
-const totalSlides = slides.length;
-const nextBtn = document.getElementById("next");
-const prevBtn = document.getElementById("prev");
+const slides = document.querySelectorAll('.slide');
+const nextBtn = document.querySelector('.next');
+const prevBtn = document.querySelector('.prev');
+const dotsContainer = document.querySelector('.dots');
 
+let current = 0;
+let autoSlide;
+const interval = 5000;
+
+// === Создаём точки ===
+slides.forEach((_, i) => {
+    const dot = document.createElement('span');
+    if (i === 0) dot.classList.add('active');
+    dotsContainer.appendChild(dot);
+});
+
+const dots = document.querySelectorAll('.dots span');
+
+// === Функция показа слайда ===
 function showSlide(index) {
-    const slidesContainer = document.querySelector(".slides");
-    slidesContainer.style.transform = `translateX(-${index * 100}%)`;
+    slides.forEach(slide => slide.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+
+    slides[index].classList.add('active');
+    dots[index].classList.add('active');
+    current = index;
 }
 
+// === Следующий слайд ===
 function nextSlide() {
-    currentIndex = (currentIndex + 1) % totalSlides;
-    showSlide(currentIndex);
+    let next = (current + 1) % slides.length;
+    showSlide(next);
 }
 
+// === Предыдущий слайд ===
 function prevSlide() {
-    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-    showSlide(currentIndex);
+    let prev = (current - 1 + slides.length) % slides.length;
+    showSlide(prev);
 }
 
-nextBtn.addEventListener("click", nextSlide);
-prevBtn.addEventListener("click", prevSlide);
+// === Автоматическая прокрутка ===
+function startAuto() {
+    autoSlide = setInterval(nextSlide, interval);
+}
 
-// Автоматическое переключение каждые 5 секунд
-setInterval(nextSlide, 5000);
+function stopAuto() {
+    clearInterval(autoSlide);
+}
+
+// === События ===
+nextBtn.addEventListener('click', () => {
+    nextSlide();
+    stopAuto();
+    startAuto();
+});
+
+prevBtn.addEventListener('click', () => {
+    prevSlide();
+    stopAuto();
+    startAuto();
+});
+
+dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+        showSlide(i);
+        stopAuto();
+        startAuto();
+    });
+});
+
+// === Старт ===
+showSlide(current);
+startAuto();

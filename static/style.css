@@ -143,43 +143,85 @@ footer{
 
 .slider {
     position: relative;
-    width: 600px;
-    height: 300px;
+    width: 100%;
+    height: 400px;
     overflow: hidden;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
-.slides {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
 .slide {
-    min-width: 100%;
-    height: 300px;
-    background: #0078ff;
-    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 24px;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    background-size: cover;
+    background-position: center;
 }
 
-.slide:nth-child(2) { background: #ff6f00; }
-.slide:nth-child(3) { background: #28a745; }
-.slide:nth-child(4) { background: #9c27b0; }
+.slide.active {
+    opacity: 1;
+    z-index: 1;
+}
 
-.controls {
+.overlay{
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: white;
+}
+
+.slide .content {
+    text-align: center;
+    background: rgba(0,0,0,0.6);
+    padding: 20px 40px;
+    border-radius: 10px;
+}
+
+
+.slide h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.slide p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.btn-slide {
+    display: inline-block;
+    background: #ff0000;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn-slide:hover {
+    background: #e60000;
+}
+
+.btn {
     position: absolute;
     top: 50%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
     transform: translateY(-50%);
-}
-
-.controls button {
     background: rgba(0,0,0,0.4);
     border: none;
     color: white;
@@ -188,8 +230,34 @@ footer{
     cursor: pointer;
     border-radius: 50%;
     transition: background 0.3s;
+    z-index: 2;
 }
 
-.controls button:hover {
+.btn:hover {
     background: rgba(0,0,0,0.7);
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.dots {
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+    text-align: center;
+}
+
+.dots span {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: rgba(255,255,255,0.6);
+    border-radius: 50%;
+    margin: 0 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.dots span.active {
+    background: white;
 }
