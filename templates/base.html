@@ -13,11 +13,12 @@
              {% block menu %}{% endblock %}
         </header>
         <main>
-            
+            {% block content %}{% endblock %}
         </main>
         <footer>
             {% block foot %}{% endblock %}
         </footer>
     </div>
+    <script src="{{ url_for('static', filename='js/slider.js') }}"></script>
 </body>
 </html>
