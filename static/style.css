@@ -258,9 +258,101 @@ nav .reference_men{
 }
 
 
+.work{
+    margin-top: 20px;
+}
+
+.galerii_h{
+    font-family: 'Nosifer', cursive;
+    color: #ff0000;
+    text-align: center;
+    font-size: 45px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 10px;
+  padding: 20px;
+}
+
+.gallery .gallery_foto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 4/3;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: transform 0.2s ease;
+}
+
+.gallery .gallery_foto:hover {
+  transform: scale(1.05);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal .gallery_foto {
+  max-width: 90%;
+  max-height: 85vh;
+  object-fit: contain;
+  transition: transform 0.3s;
+  cursor: grab;
+}
+
+.controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+.arrow {
+  cursor: pointer;
+  font-size: 2rem;
+  padding: 10px 20px;
+  user-select: none;
+  color: white;
+}
+
+.zoom-controls {
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
+  text-align: center;
+}
+
+.zoom-btn {
+  background: #333;
+  color: white;
+  border: none;
+  margin: 0 10px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.zoom-btn:hover {
+  background: #555;
+}
 
 
 footer{
     background-color: rgb(16, 15, 15);
-    margin-top: 1000px;
+    margin-top: 10px;
 }
