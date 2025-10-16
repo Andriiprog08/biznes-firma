@@ -145,3 +145,19 @@ modalImg.addEventListener('wheel', e => {
   else scale = Math.max(0.5, scale - 0.1);
   modalImg.style.transform = `scale(${scale})`;
 });
+
+
+const toTopBtn = document.getElementById("toTopBtn");
+
+window.onscroll = function(){
+  if (document.body.scrollTop > 200 || dokument.documentElement.scrollTop > 200){
+    toTopBtn.style.display = "block"
+  }
+  else{
+    toTopBtn.style.display = "none";
+  }
+};
+
+toTopBtn.addEventListener("click", function(){
+  window.scrollTo({ top: 0, behavior: "smooth"});
+});

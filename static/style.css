@@ -357,6 +357,20 @@ nav .reference_men{
     right: 30px;
     width: 50px;
     height: 50px;
+    background-color: #970606;
+    background-image: url("static/pictures/up-arrow.png");
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    transition: opacity 0.3s;
+}
+
+#toTopBtn:hover {
+    background-color: #ff0000;
 }
 
 footer{
