@@ -149,15 +149,14 @@ modalImg.addEventListener('wheel', e => {
 
 const toTopBtn = document.getElementById("toTopBtn");
 
-window.onscroll = function(){
-  if (document.body.scrollTop > 200 || dokument.documentElement.scrollTop > 200){
-    toTopBtn.style.display = "block"
-  }
-  else{
-    toTopBtn.style.display = "none";
-  }
-};
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 200) {
+      toTopBtn.style.display = "block";
+    } else {
+      toTopBtn.style.display = "none";
+    }
+  });
 
-toTopBtn.addEventListener("click", function(){
-  window.scrollTo({ top: 0, behavior: "smooth"});
-});
+  toTopBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
