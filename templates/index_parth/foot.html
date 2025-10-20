@@ -1,28 +1,49 @@
 <div class="conteiner_end">
     <div class="info_end">
-        <h1 class="foot_importan">Contacts</h1>
+        <h1 class="foot_importan">
+            <a class="foot_importan" href="#">Contacts</a>
+        </h1>
         <ul class="block_end">
-            <li class="list_end">+ 420 123 456 789</li>
+            <li class="list_end">
+                <a class="li_link" href="mailto: marked_by_darkness@studio.cz">marked_by_darkness@studio.cz</a>
+            </li>
+            <li class="list_end" >
+                <a class="li_link" href="tel:+ 420 123 456 789">+ 420 123 456 789</a>
+            </li>
+            <li class="list_end">Opening hours according to orders.</li>
+            <li class="list_end">ID: 17231521453</li>
         </ul>
     </div>
     <div class="info_end">
-        <h1 class="foot_importan">Types of tattoos</h1>
-        <ul class="block_end">
-            <li class="list_end"></li>
-        </ul>
+        <h1 class="foot_importan">
+            <a class="foot_importan" href="#">Types of tattoos</a>
+        </h1>
+        {%for id, tattoo in tattoos.items() %}
+            <ul class="block_end">
+                <li class="list_end">
+                    <a class="li_link" href="{{tattoo.link}}">{{tattoo.name}}</a>
+                </li>
+            </ul>
+        {%endfor%}
     </div>
     <div class="info_end">
-        <h1 class="foot_importan">Online shop and products</h1>
-        <ul class="block_end">
-            <li class="list_end"></li>
-        </ul>
+        <h1 class="foot_importan">
+            <a class="foot_importan" href="#">Online shop and products</a>
+        </h1>
+        {%for id, product in products.items() %}
+            <ul class="block_end">
+                <li class="list_end">
+                    <a class="li_link" href="{{product.link}}">{{product.name}}</a>
+                </li>
+            </ul>
+        {%endfor%}
     </div>
     <div class="info_end">
         <div class="end_logo">
             <img src="static/pictures/skull.png" title="skull" class="end_picture">
             <h1 class="foot_importan">Marked by Darkness</h1>
         </div>
-        <p></p>
+        <p class="footstudio_text">Your body is a canvas, and a tattoo is the story you choose to tell the world. Don’t be afraid to be yourself — take the step toward self-expression.</p>
     </div>
 </div>
 <div class="footer_botom">

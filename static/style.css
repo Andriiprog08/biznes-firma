@@ -379,24 +379,33 @@ footer{
 }
 
 .conteiner_end{
+    margin: 60px 0px;
+    padding-top: 35px;
+    padding-bottom: 40px;
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
 .info_end{
-    /* display: inline-flex; */
     position: relative;
-    gap: 20px;
     text-align: center;
     margin: 10px 50px;
     width: 500px;
 }
 
-.list_end{
+.block_end{
+    list-style: none;
+}
+
+.list_end, .footstudio_text{
     color: white;
-    font-size: 20px;
+    font-size: 23px;
     width: 300px;
+    margin: 15px 0px;
+}
+
+.li_link{
+    color: white;
 }
 
 .end_logo{
@@ -409,6 +418,7 @@ footer{
     font-size: 20px;
     font-family: 'Nosifer', cursive;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .end_picture{
