@@ -385,10 +385,18 @@ footer{
 }
 
 .info_end{
-    display: inline-flex;
+    /* display: inline-flex; */
     position: relative;
     gap: 20px;
     text-align: center;
+    margin: 10px 50px;
+    width: 500px;
+}
+
+.list_end{
+    color: white;
+    font-size: 20px;
+    width: 300px;
 }
 
 .end_logo{
@@ -398,14 +406,14 @@ footer{
 
 .foot_importan{
     color: rgb(193, 29, 29);
-    font-size: 25px;
+    font-size: 20px;
     font-family: 'Nosifer', cursive;
     cursor: pointer;
-    padding-top: 20px;
 }
 
 .end_picture{
     width: 100px;
+    height: 95px;
 }
 
 .down_info{
