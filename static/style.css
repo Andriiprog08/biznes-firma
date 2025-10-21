@@ -290,6 +290,21 @@ nav .reference_men{
   transform: scale(1.05);
 }
 
+.autors{
+    display: flex;
+    justify-content: center;
+}
+
+.block_informations{
+    margin: 20px 50px;
+    display: inline-flex;
+    position: relative;
+}
+
+.informations_pictur{
+    width: 400px;
+}
+
 .modal {
   display: none;
   position: fixed;
