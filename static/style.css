@@ -290,6 +290,20 @@ nav .reference_men{
   transform: scale(1.05);
 }
 
+.information_conteiner{
+    background-color: #000;
+    margin: 20px 0;
+    display: flex;
+    padding: 40px;
+    
+}
+
+.info_studio{
+    position: relative;
+    display: inline-flex;
+}
+
+
 .autors{
     display: flex;
     justify-content: center;
